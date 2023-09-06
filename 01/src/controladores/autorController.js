@@ -31,7 +31,7 @@ const buscarAutor = async (request, response) => {
     const { id } = request.params;
 
     if (!id || isNaN(Number(id))) {
-        return response.status(400).json({ mensagem: 'Identificador é obrigatório.' });
+        return response.status(400).json({ mensagem: 'Identificador inválido.' });
     }
 
     const query = `
