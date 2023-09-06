@@ -27,6 +27,33 @@ const cadastrarAutor = async (request, response) => {
     }
 }
 
+const buscarAutor = async (request, response) => {
+    const { id } = request.params;
+
+    if (!id || isNaN(Number(id))) {
+        return response.status(400).json({ mensagem: 'Identificador é obrigatório.' });
+    }
+
+    const query = `
+    SELECT * FROM autores WHERE id = $1;
+    `;
+
+    try {
+        const autor = await pool.query(query, [id]);
+        if (!autor.rows[0]) {
+            return response.status(404).json({ mensagem: 'Autor não encontrado.' });
+        }
+
+        return response.json(autor.rows[0]);
+
+    } catch (error) {
+        console.log(error.message);
+        return response.status(500).json({ mensagem: 'Ocorreu um erro ao tentar buscar um autor.' });
+    }
+
+}
+
 module.exports = {
-    cadastrarAutor
+    cadastrarAutor,
+    buscarAutor
 };
