@@ -30,13 +30,7 @@ const cadastrarAutor = async (request, response) => {
 const buscarAutor = async (request, response) => {
     const { id } = request.params;
 
-    if (!id || isNaN(Number(id))) {
-        return response.status(400).json({ mensagem: 'Identificador inválido.' });
-    }
-
-    const query = `
-    SELECT * FROM autores WHERE id = $1;
-    `;
+    const query = `SELECT * FROM autores WHERE id = $1;`;
 
     try {
         const autor = await pool.query(query, [id]);
