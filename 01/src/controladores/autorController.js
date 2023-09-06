@@ -42,9 +42,9 @@ const buscarAutor = async (request, response) => {
 
         const livros = (await pool.query(queryLivros, [id])).rows;
 
-        if (livros.length === 0) {
-            return response.status(404).json({ mensagem: 'livro não encontrado.' })
-        }
+        // if (livros.length === 0) {
+        //     return response.status(404).json({ mensagem: 'livro não encontrado.' })
+        // }
 
         return response.json({
             autor,
