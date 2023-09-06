@@ -8,5 +8,6 @@ const { validarExistenciaAutor, validarParametroUrl } = require('./intermediario
 roteador.post('/autor', autorController.cadastrarAutor);
 roteador.get('/autor/:id', validarParametroUrl, validarExistenciaAutor, autorController.buscarAutor);
 roteador.post('/autor/:id/livro', validarParametroUrl, validarExistenciaAutor, livroController.cadastrarLivro);
+roteador.get('/livro', livroController.listarLivros);
 
 module.exports = roteador;
