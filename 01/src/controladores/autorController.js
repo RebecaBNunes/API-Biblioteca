@@ -30,15 +30,26 @@ const cadastrarAutor = async (request, response) => {
 const buscarAutor = async (request, response) => {
     const { id } = request.params;
 
-    const query = `SELECT * FROM autores WHERE id = $1;`;
+    const queryAutor = `SELECT * FROM autores WHERE id = $1;`;
 
     try {
-        const autor = await pool.query(query, [id]);
-        if (!autor.rows[0]) {
+        const autor = (await pool.query(queryAutor, [id])).rows[0];
+        if (!autor) {
             return response.status(404).json({ mensagem: 'Autor não encontrado.' });
         }
 
-        return response.json(autor.rows[0]);
+        const queryLivros = `SELECT nome, genero, editora, data_publicacao FROM livros WHERE autor_id = $1`;
+
+        const livros = (await pool.query(queryLivros, [id])).rows;
+
+        if (livros.length === 0) {
+            return response.status(404).json({ mensagem: 'livro não encontrado.' })
+        }
+
+        return response.json({
+            autor,
+            livros
+        });
 
     } catch (error) {
         console.log(error.message);
