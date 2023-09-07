@@ -22,10 +22,10 @@ API responsável por realizar listagem, consulta e cadastro de livros e autores 
 - Clone o repositório:
 
 ```
- git clone https://github.com/RebecaBNunes API-Biblioteca.git
+ git clone https://github.com/RebecaBNunes/API-Biblioteca.git
 ```
 
-- Navege até a pasta do projeto e instale as dependencias necessárias: (express, nodemon e pg):
+- Navegue até a pasta do projeto e instale as dependências necessárias: (express, nodemon e pg):
 
 ```
 npm install
@@ -37,6 +37,12 @@ npm install
 npm run start
 ```
 
+- Para realizar testes utilize a porta 3000;
+
+```
+URL - http://localhost:3000/<recurso>
+```
+
 ## Exemplo de Uso 🎬
 
 Para executar requisições à API, instale um cliente HTTP (exemplo: [Insomnia](https://insomnia.rest/download))
@@ -45,6 +51,21 @@ No gif abaixo, é possível ver o cadastro de um livro para um autor e a listage
 
 ![uso_insomnia](./assets/exemplo-uso-api-library.gif)
 
+## Ferramentas Utilizadas 🧰
+
+<div>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="65px" margin="100px"/>
+          
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="65px"/>
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="65px"/>
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="65px"/>
+ 
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="65px"/>
+           
+</div>
+          
 ## Autora 🧚‍♂️
 
 <img src="./assets/rebeca-barbosa-perfil.jpeg" width="135px" alt="rebeca-barbosa">
