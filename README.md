@@ -62,8 +62,8 @@ No gif abaixo, é possível ver o cadastro de um livro para um autor e a listage
 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="65px"/>
  
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="65px"/>
-           
+ <img src="./assets/github.png" width="65px"/>
+
 </div>
           
 ## Autora 🧚‍♂️
