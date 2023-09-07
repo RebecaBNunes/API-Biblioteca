@@ -22,7 +22,7 @@ const cadastrarAutor = async (request, response) => {
         const autor = await pool.query('SELECT * FROM autores WHERE id = $1', [id]);
         return response.status(201).json(autor.rows[0]);
     } catch (error) {
-        console.log(error.message);
+        console.error(error.message);
         return response.status(500).json({ mensagem: 'Ocorreu um erro ao tentar cadastrar o autor.' });
     }
 }
@@ -52,7 +52,7 @@ const buscarAutor = async (request, response) => {
         });
 
     } catch (error) {
-        console.log(error.message);
+        console.error(error.message);
         return response.status(500).json({ mensagem: 'Ocorreu um erro ao tentar buscar um autor.' });
     }
 
